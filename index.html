@@ -11,13 +11,137 @@
 <body>
   
   <nav id="navbar">
-    <header></header>
-    <a href="#JavaScript_and_Java" class="nav-link">JavaScript and Java</a>
+    <header>Command Block</header>
+    <ul>
+      <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+      <li><a href="#Obtaining" class="nav-link">Obtaining</a></li>
+      <li><a href="#Usage" class="nav-link">Usage</a></li>
+      <ul>
+        <li><a href="#Info">Info</a></li>
+        <li><a href="#Block_loot">Block loot</a></li>
+        <li><a href="#Activation">Activation</a></li>
+      </ul>
+      <li><a href="#Gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#Issues" class="nav-link">Issues</a></li>
+      <li><a href="#References" class="nav-link">References</a></li>
+    </ul>
   </nav>
   
   <main id="main-doc">
-    <section id="JavaScript_and_Java" class="main-section">
-      <header>JavaScript and Java</header>
+    <section id="Introduction" class="main-section">
+      <header>Introduction</header>
+      <p>A command block is a block that can execute commands. Because it cannot be obtained or edited in Survival mode without cheats, it is primarily used on multiplayer servers and in custom maps.</p>
+    </section>
+
+    <section id="Obtaining" class="main-section">
+      <header>Obtaining</header>
+      <p>Command blocks are not available in the Creative inventory. It can either be obtained by using the pick block control, or by using various commands, such as <code>/give @s command_block</code>, or <code>/setblock ~ ~ ~ command_block</code>.</p>
+      <p>In Java Edition, just like other blocks that can store NBT data, using pick block + <code>CTRL</code> copies the command and options inside the command block. This allows it to be placed elsewhere without having to re-enter the data inside.</p>
+      <p>Command blocks also cannot be broken in Survival mode without operator permissions, are not flammable, cannot be moved by pistons, and have the same blast resistance as bedrock.</p>
+    </section>
+
+    <section id="Usage" class="main-section">
+      <header>Usage</header>
+      <section id="Info">
+        <header>Info</header>
+        <p>A command block can execute commands when activated by redstone power. It always has permissions of 2 level, so it can be used to allow a specific use of a command by players who can't use that command in general (for example, allowing anyone to obtain a specific item with <code>/give</code> without allowing everyone to /give themselves whatever they want).</p>
+        <p>A command block has an orientation that determines the chain command block to activate, and the blocks to be checked to see if a command block in "Conditional" mode executes.</p>
+        <p>To execute the command, in Java Edition in multiplayer <code>enable-command-block</code> in the server.properties file must be set to <code>true</code> (default is <code>false</code>); in Bedrock Edition "Command Blocks Enabled" in options must be enabled.</p>
+      </section>
+      <section id="Block_loot">
+        <header>Block loot</header>
+        <table>
+          <thead>
+            <tr>
+              <th>NameSpaced ID</th>
+              <th>Source</th>
+              <th>Drops</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hardcoded</td>
+              <td>Command Block</td>
+              <td>Nothing (100%)</td>
+            </tr>
+            <tr>
+              <td>Hardcoded</td>
+              <td>Chain Command Block</td>
+              <td>Nothing (100%)</td>
+            </tr>
+            <tr>
+              <td>Hardcoded</td>
+              <td>Repeating Command Block</td>
+              <td>Nothing (100%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="Activation">
+        <header>Activation</header>
+        <p>Command blocks are redstone mechanisms and can be activated by:</p>
+        <ul>
+          <li>An adjacent active power component: for example, a lever, a block of redstone, a daylight sensor, a button etc.</li>
+          <li>An adjacent powered block (for example, an opaque block with an active redstone torch under it)</li>
+          <li>A powered redstone comparator or redstone repeater facing the mechanism component</li>
+          <li>Powered redstone dust configured to point at the command block (or on top of it) or directionless; a command block is not activated by adjacent powered redstone dust that is configured to point away from it.</li>
+        </ul>
+        <p>A command block can also be activated by setting to "Always Active" mode.</p>
+        <p>When activated, a command block executes its command, depending on the command block's type:</p>
+        <ul>
+          <li>A impulse command block executes its command once.</li>
+          <li>A chain command block does not execute its command until it is triggered.</li>
+          <li>A repeat command block executes its command once every one game tick (or more‌[BE only]) until no longer activated.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="Gallery" class="main-section">
+      <header>Gallery</header>
+      <ul class="gallery">
+        <li class="gallery-box">
+          <div class="gallery-thumb">
+            <a target="_blank" href="https://minecraft.gamepedia.com/File:Command_Block_GUI_(Bedrock_Edition).png">
+              <img alt src="https://gamepedia.cursecdn.com/minecraft_gamepedia/thumb/f/fc/Command_Block_GUI_%28Bedrock_Edition%29.png/110px-Command_Block_GUI_%28Bedrock_Edition%29.png?version=fdb90c258b3e61b58651ecc19a84ad58">
+            </a>
+          </div>
+          <div class="gallery-text">
+            <p>The command block GUI in Bedrock Edition pre 1.12.0</p>
+          </div>
+        </li>
+        <li class="gallery-box">
+          <div class="gallery-thumb">
+            <a target="_blank" href="https://minecraft.gamepedia.com/File:JebAdventureModeControlBlockDev1.png">
+              <img alt src="https://gamepedia.cursecdn.com/minecraft_gamepedia/thumb/9/91/JebAdventureModeControlBlockDev1.png/120px-JebAdventureModeControlBlockDev1.png?version=c3e242b7d4cce46ad4e41df30fada4d1">
+            </a>
+          </div>
+          <div class="gallery-text">
+            <p>The first image released by Mojang of the command block.</p>
+          </div>
+        </li>
+        <li class="gallery-box">
+          <div class="gallery-thumb">
+            <a target="_blank" href="https://minecraft.gamepedia.com/File:JebAdventureModeControlBlockDev2.png">
+              <img alt src="https://gamepedia.cursecdn.com/minecraft_gamepedia/thumb/4/45/JebAdventureModeControlBlockDev2.png/120px-JebAdventureModeControlBlockDev2.png?version=2d618abfe72f2c243f23df28e60a29f9">
+            </a>
+          </div>
+          <div class="gallery-text">
+            <p>The second image released by Mojang showing the block giving glass to the player.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="Issues" class="main-section">
+      <header>Issues</header>
+      <p>Issues relating to "Command Block" are maintained on the <a href="https://minecraft.gamepedia.com/Bug_tracker">bug tracker</a>. Report issues <a href="https://bugs.mojang.com/issues/?jql=project%20in%20%28MC%2C%20MCPE%29%20and%20%28resolution%20is%20empty%20or%20resolution%20in%20%281%2C%202%2C%206%29%29%20and%20%28summary%20~%20%22Command%20Block%22%29%20order%20by%20resolution%20desc">there</a>.</p>
+    </section>
+
+    <section id="References" class="main-section">
+      <header>References</header>
+      <ol>
+        <li><a href=" https://bugs.mojang.com/browse/MC-80671?focusedCommentId=228546&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-228546"> https://bugs.mojang.com/browse/MC-80671?focusedCommentId=228546&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-228546</a></li>
+      </ol>
     </section>
   </main>
 
